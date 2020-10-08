@@ -10,18 +10,87 @@
 </head>
 
 <body>
+    <%-include('./partials/nav')%>
+
     <section id="profile-form">
+        <div class="container">
+            <h1>Willkommen bei FundPot!</h1>
+            <h6>Hier wirst du dein Profil erstellen</h6>
+            <img src="/create-profile-1.png" alt="">
+        </div>
+
+        <ul>
+            <li><a class="active" href="#">Basics</a></li>
+            <li><a href="#">Rewards</a></li>
+            <li><a href="#">Auszahlung</a></li>
+            <li><a href="#">Einstellungen</a></li>
+            <li><a href="#">Vorschau</a></li>
+        </ul>
+
         <form action="/createCompanyProfile" method="POST">
-            <input type="text" name="name" id="" placeholder="Name of your company">
-            <input type="text" name="headline" id="" placeholder="What is your business?">
-            <textarea name="story" id="" cols="30" rows="10" placeholder="Write your story"></textarea>
-            <input type="text" name="cover_photo_url" id="" placeholder="Cover photo url">
-            <input type="text" name="profile_photo_url" id="" placeholder="Profile photo url">
+            <article>
+                <div>
+                    <label for="">Name des Geschäfts</label>
+                    <h6>erforderlich</h6>
+                </div>
+
+                <input type="text" name="name" id="" placeholder="Name of your company">
+            </article>
+
+            <article>
+                <div>
+                    <label for="">Was machst du?</label>
+                    <h6>erforderlich</h6>
+                </div>
+
+                <input type="text" name="headline" id="" placeholder="What is your business?">
+            </article>
+
+
+
+            <!--   <h3>Hast du ein Team
+                oder bist du alleine?</h3>
+            <div>
+                <label for="team">Team</label>
+                <input type="checkbox" name="team" id="">
+                <label for="alone">Selbstständig</label>
+                <input type="checkbox" name="alone" id="">
+            </div> -->
+
+            <article>
+                <div>
+                    <label for="">Coverbild</label>
+                    <h6>erforderlich</h6>
+                </div>
+
+                <input type="text" name="cover_photo_url" id="" placeholder="Cover photo url">
+            </article>
+
+            <article>
+                <div>
+                    <label for="">Profilbild</label>
+                    <h6>erforderlich</h6>
+                </div>
+
+                <input type="text" name="profile_photo_url" id="" placeholder="Profile photo url">
+            </article>
+
+            <article>
+                <div>
+                    <label for="">Text über dein Geschäft</label>
+                    <h6>erforderlich</h6>
+                </div>
+
+                <textarea name="story" id="" cols="50" rows="10" placeholder="Write your business story"></textarea>
+            </article>
+
             <!-- <input type="text" name="support" id="" placeholder="Which type of support do you need?"> -->
 
             <input class="btn" type="submit" value="Submit">
         </form>
     </section>
+
+    <%-include('./partials/footer')%>
 </body>
 
 </html>

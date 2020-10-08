@@ -22,9 +22,9 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
             .catch(err => console.log(err))
     })
 
-app.get("/", (req, res) => {
-    res.render("index")
-})
+// app.get("/", (req, res) => {
+//     res.render("index")
+// })
 
 app.get("/createCompanyProfile", (req, res) => {
     res.render('createCompanyProfile')
@@ -69,6 +69,49 @@ app.get("/signup", (req, res) => {
     res.render("signup")
 })
 
-app.use((req, res) => {
+//Isabelle
+app.get("/", (req, res) => {
+    companyProfile.aggregate([{ $sample: { size: 6 } }])
+    .then(result => {
+        // console.log(result)
+        res.status(200).render("index", { profile: result })
+    })
+    .catch(err => console.log(err))
+})
+
+app.post('/search', (req, res) => {
+    // console.log(`search query ` + req.body.search)
+    res.status(200).redirect(`/search/${req.body.search}`)
+})
+
+app.get('/search/:id', (req, res) => {
+    // console.log(`search query ` + req.params.id)
+    companyProfile.find({ company_name: req.params.id })
+        .then(result => {
+            console.log(req.params.id)
+            console.log(result)
+            res.status(200).redirect(`/companyProfilePage/${result[0]._id}`)
+        })
+        .catch(err => console.log(err))
+})
+
+app.post('/contact', (req, res) => {
+    const newContactData = new contactData({
+        name: req.body.name,
+        email: req.body.email,
+        phone: req.body.phone,
+        body: req.body.body,
+    })
+    newContactData.save()
+    .then(result => {
+        console.log("new contact request saved to db!")
+        res.status(200).redirect("/")
+    })
+    .catch(err => console.log(err))
+})
+
+
+
+app.use("/pageNotFound", (req, res) => {
     res.render("404")
 })

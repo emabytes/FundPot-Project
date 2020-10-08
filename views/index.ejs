@@ -15,11 +15,13 @@
 
     <section id="hero">
         <article id="heroA">
-            <img id="heroI" src="./assets/Bilder/hero-img 1.png" alt="">
+            <img id="heroI" src="/hero-img 1.png" alt="">
             <article id="heroB">
                 <h1 id="heroH">Hilf dem lokalen Handel mit deiner Spende!</h1>
-                <p id="heroP">Einleitungstext über die Webseite.
-                    Lorem ipsum dolor sit amet, con sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.
+                <p id="heroP">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit necessitatibus
+                    blanditiis eos dolor enim beatae, officia harum eaque? Tempora ex deleniti a omnis dolores tenetur
+                    aspernatur amet inventore? Aliquam ipsa vero sapiente provident rem aut nisi eligendi tempore vel
+                    quisquam.
                 </p>
                 <div class="text-box">
                     <a href="#" class="btn btn-white btn-animate">Los gehts</a>
@@ -27,12 +29,69 @@
             </article>
         </article>
     </section>
+
+    <section id="about">
+        <div class="wrap">
+            <h1>Unsere Mission</h1>
+            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure dolor atque quas eum facilis eaque totam
+                facere, quia quae enim quisquam, pariatur saepe veniam nam nemo aperiam asperiores esse in sunt! Rem,
+                harum unde similique sit explicabo dolorem modi obcaecati? </p>
+        </div>
+        <div> <img src="/about-1.jpg" alt=""></div>
+        <div><img src="/about-2.jpg" alt=""></div>
+        <div class="wrap">
+            <h1>Quia consequuntur magni dolores</h1>
+            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit consequatur aspernatur incidunt nulla ad.
+                Culpa molestiae vel aspernatur repudiandae quisquam ea quasi eos id earum magnam, facere dicta ipsa
+                autem eum incidunt saepe molestias maxime. Distinctio eaque sint ullam deleniti. </p>
+        </div>
+        <div class="wrap">
+            <h1>Sed ut perspiciatis unde omnis</h1>
+            <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur magnam quis porro eveniet ipsam
+                blanditiis ad officia amet fuga odio! Eveniet necessitatibus rem perferendis, cupiditate ex dolorum? Sed
+                quia, totam voluptas minima nostrum expedita quas! Est voluptate adipisci rem aperiam! </p>
+        </div>
+        <div> <img src="/about-3.jpg" alt=""></div>
+    </section>
+
+    <section id="highlights">
+        <article id="search">
+            <form action="/search" method="POST">
+                <div>
+                    <!-- <img id="search_icon" src="/search.png" alt=""> -->
+                    <input placeholder="ein Geschäft suchen" type="search" name="search" id="">
+                </div>
+                <button class="btn btn-white btn-animate" type="submit">Suchen</button>
+            </form>
+        </article>
+        <article id="random">
+            <h1 id="random_headlines">Unterstütze diese Geschäfte
+                mit deiner <br> Spende oder Arbeitskraft!</h1>
+            <div id="highlights_loop">
+                <% profile.forEach(element => { %>
+                <div class="highlights_card">
+                    <img src="<%= element.cover_photo_url %>" alt="">
+                    <div class="highlights_container">
+                        <h1><%= element.company_name %> </h1>
+                        <p><%= element.company_headline %> </p>
+                        <a class="support-btn" href="/companyProfilePage/<%= element._id %> ">Support</a>
+                    </div>
+                </div>
+                <% }) %>
+            </div>
+            <a class="support-btn all" id="all_btn" href="/companyProfileList">Alle Geschäfte</a>
+        </article>
+    </section>
+
     <section id="release">
         <p id="releaseP">Are you ready to <span></span> rumble?</p>
         <div class="text-box marg">
             <a href="#" class="btn btn-white btn-animate">Profil erstellen</a>
         </div>
     </section>
+
+    <%-include('./partials/footer')%>
+
 </body>
 
 </html>
