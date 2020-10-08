@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <h1>Company profile list</h1>
+
+    <section class="grid">
+        <% profileData.forEach(elem => { %>
+        <article>
+
+            <img src="<%= elem.cover_photo_url %>" alt=""></img>
+            <img src="<%= elem.profile_photo_url %>" alt=""></img>
+            <h1> <%= elem.company_name %> </h1>
+            <h5> <%= elem.company_headline %> </h5>
+            <p><%= elem.company_story %></p>
+            <a href="/companyProfilePage/<%= elem._id %>">See more</a>
+
+        </article>
+        <% }); %>
+    </section>
+</body>
+
+</html>

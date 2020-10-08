@@ -1,0 +1,39 @@
+form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5em;
+    max-width: 70%;
+    margin: 0 auto;
+  }
+  input,
+  textarea {
+    background: rgba(51, 51, 51, 0.2);
+    color: rgba(51, 51, 51, 0.5);
+    border: none;
+    padding: 1em;
+    border-radius: 5px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+  }
+  img {
+      width: 50%;
+  }
+  .grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 30px;
+  }
+  .grid article {
+      background: rgb(155, 186, 244);
+  }
+  .info-wrap{
+      width: 50%;
+      margin: 0 auto;
+      text-align: center;
+  }
+  .info-wrap img {
+      width: 30%;
+  }
+  .btn{
+      background-color: palevioletred;
+  }
