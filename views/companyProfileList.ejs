@@ -4,27 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>All Companies</title>
     <link rel="stylesheet" href="/style.css">
+    <script src="https://kit.fontawesome.com/3b1c75d67e.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <h1>Company profile list</h1>
+    <%-include('./partials/nav')%>
 
-    <section class="grid">
-        <% profileData.forEach(elem => { %>
-        <article>
+    <main id="profile-list">
+        <h1>Hier sind alle Geschäfte, <br> die
+            du unterstützen kannst</h1>
 
-            <img src="<%= elem.cover_photo_url %>" alt=""></img>
-            <img src="<%= elem.profile_photo_url %>" alt=""></img>
-            <h1> <%= elem.company_name %> </h1>
-            <h5> <%= elem.company_headline %> </h5>
-            <p><%= elem.company_story %></p>
-            <a href="/companyProfilePage/<%= elem._id %>">See more</a>
+        <section id="profile-list-wrap">
+            <% profileData.forEach(elem => { %>
+            <article>
+                <img src="<%= elem.cover_photo_url %>" alt=""></img>
+                <img src="<%= elem.profile_photo_url %>" alt=""></img>
+                <div class="text-wrap">
+                    <h2> <%= elem.company_name %> </h2>
+                    <p> <%= elem.company_headline %> </p>
+                    <a class="btn" href="/companyProfilePage/<%= elem._id %>">Support</a>
+                </div>
+            </article>
+            <% }); %>
+        </section>
+    </main>
 
-        </article>
-        <% }); %>
-    </section>
 </body>
 
 </html>

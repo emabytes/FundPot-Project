@@ -1,39 +1,410 @@
-form {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0.5em;
-    max-width: 70%;
-    margin: 0 auto;
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@200;400;600&display=swap");
+
+/* font-family: 'Lobster', cursive;
+font-family: 'Montserrat', sans-serif; */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+a {
+  text-decoration: none;
+}
+nav {
+  color: #333;
+  display: flex;
+  height: 10vh;
+  align-items: center;
+  justify-content: space-around;
+}
+nav h5 {
+  font-family: "Lobster", cursive;
+  font-size: 2.2em;
+  color: #333;
+}
+.logo-wrap {
+  display: flex;
+  align-items: center;
+}
+.logo-wrap h5 {
+  margin-left: 2em;
+}
+.logo {
+  position: fixed;
+}
+nav ul {
+  color: #333;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+nav ul li a {
+  color: #333;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+nav ul li a:hover {
+  color: #6c63ff;
+}
+nav .btn {
+  font-family: "Lobster", cursive;
+  font-size: 1em;
+  margin: 0 auto;
+  background: #ff6584;
+  color: white;
+}
+nav ul li {
+  color: #333;
+  display: inline-block;
+  /* padding-left: 20px; */
+  font-family: "Montserrat", sans-serif;
+}
+nav .btn-profil {
+  color: white;
+  background: #ff6584;
+  border-radius: 27px;
+  font-family: "Lobster", cursive;
+  font-size: 1.4rem;
+  padding: 5px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+}
+nav .btn-profil:hover {
+  background: #6c63ff;
+  color: white;
+}
+nav button i {
+  font-size: 1.8em;
+  color: #333;
+  padding: 5px;
+}
+nav button {
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+nav form {
+  display: flex;
+  align-items: center;
+}
+nav form ul li a {
+  color: #333;
+  font-size: 1.3em;
+}
+nav input {
+  background: rgba(51, 51, 51, 0.2);
+  color: #333;
+  width: 20em;
+  height: 2em;
+  border-radius: 50px;
+  font-family: "Montserrat", sans-serif;
+  padding: 0.5em;
+  outline: none;
+  border: none;
+}
+
+/* .info-wrap {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+.info-wrap img {
+  width: 30%;
+} */
+
+/* welcome section */
+#hero {
+  height: 90vh;
+  background: linear-gradient(
+      255.93deg,
+      #ff6584 -8.79%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    #6c63ff;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+#heroA {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 90%;
+  margin: 0 auto;
+}
+#heroB {
+  width: 70%;
+  margin: 5vh 0 0 10%;
+}
+#heroH {
+  font-family: Lobster;
+  font-size: 45px;
+  line-height: 56px;
+  font-style: normal;
+  font-weight: normal;
+  color: #ffffff;
+  margin: 0 0 2vh 0;
+}
+#heroP {
+  font-family: Montserrat;
+  font-size: 1.5em;
+  line-height: 127.9%;
+  font-style: normal;
+  font-weight: normal;
+  color: #ffffff;
+  margin: 0 0 3vh 0;
+}
+#hero .btn:link,
+#hero .btn:visited,
+#release .btn:link,
+#release .btn:visited {
+  text-decoration: none;
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 100px;
+  transition: all 0.2s;
+  position: absolute;
+}
+#hero .btn:hover,
+#release .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+#hero .btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.btn-white {
+  background-color: #ff6584;
+  color: white;
+  font-family: Lobster;
+  font-size: 1.3em;
+}
+#hero .btn::after,
+#release .btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+.btn-white::after {
+  background-color: #fff;
+}
+#hero .btn:hover::after,
+#release .btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+.btn-animated {
+  animation: moveInBottom 5s ease-out;
+  animation-fill-mode: backwards;
+}
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
   }
-  input,
-  textarea {
-    background: rgba(51, 51, 51, 0.2);
-    color: rgba(51, 51, 51, 0.5);
-    border: none;
-    padding: 1em;
-    border-radius: 5px;
-    font-family: "Poppins", sans-serif;
-    font-weight: 300;
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
   }
-  img {
-      width: 50%;
-  }
-  .grid {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      gap: 30px;
-  }
-  .grid article {
-      background: rgb(155, 186, 244);
-  }
-  .info-wrap{
-      width: 50%;
-      margin: 0 auto;
-      text-align: center;
-  }
-  .info-wrap img {
-      width: 30%;
-  }
-  .btn{
-      background-color: palevioletred;
-  }
+}
+#release {
+  height: 60vh;
+  background: rgba(196, 196, 196, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.marg {
+  margin: 15vh 0 0 -15%;
+}
+#releaseP {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 5em;
+  text-align: center;
+  color: #6c63ff;
+}
+
+/* profile list */
+#profile-list {
+  padding: 0 3%;
+}
+#profile-list h1 {
+  padding: 3em 0;
+  font-family: "Lobster", cursive;
+  color: #6c63ff;
+  display: flex;
+  justify-content: center;
+  font-size: 3em;
+  text-align: center;
+}
+#profile-list-wrap {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3.5em;
+  text-align: center;
+  padding: 0 2em 2em 2em;
+}
+#profile-list-wrap article {
+  box-shadow: 0 10px 40px -14px rgba(0, 0, 0, 0.55);
+  border-radius: 30px;
+  padding-bottom: 2em;
+}
+#profile-list-wrap img {
+  width: 100%;
+  height: 15em;
+  object-fit: cover;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+#profile-list-wrap img:nth-of-type(2) {
+  border-radius: 50%;
+  height: 10em;
+  width: 10em;
+  margin-top: -5em;
+}
+#profile-list-wrap h2 {
+  font-family: "Lobster", cursive;
+  color: #333333;
+  font-size: 2em;
+}
+#profile-list-wrap p {
+  height: 3em;
+  color: #333333;
+  font-size: 1em;
+  font-family: "Montserrat", sans-serif;
+  padding: 0 5%;
+}
+
+/* login page, sign up page */
+#login,
+#signup {
+  height: 100vh;
+  width: 25%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#login img,
+#signup img {
+  width: 100%;
+  margin: 0 auto;
+}
+#login h2,
+#signup h2 {
+  font-family: "Lobster", cursive;
+  font-size: 2em;
+  color: #333333;
+  padding: 0.5em 0 0.2em 0;
+}
+#login h3,
+#signup h3 {
+  color: #333333;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9em;
+  padding: 0.5em 0;
+}
+#login .link,
+#signup .link {
+  color: #ff6584;
+  text-decoration: underline;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.9em;
+}
+#login .btn,
+#signup .btn,
+#profile-list .btn {
+  font-family: "Lobster", cursive;
+  font-size: 1.6em;
+  margin: 0 auto;
+  background: #ff6584;
+  color: white;
+  width: 6em;
+  height: 1.5em;
+  padding: 5px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  transition: all 0.5s;
+  margin-top: 1em;
+}
+#login .btn:hover,
+#signup .btn:hover {
+  transform: scale(0.9);
+}
+#login input,
+#signup input {
+  display: block;
+  width: 100%;
+  background: #cccccc;
+  color: rgba(51, 51, 51, 0.5);
+  border: none;
+  outline: none;
+  padding: 0.5em;
+  margin: 0.5em 0;
+  font-size: 1em;
+  border-radius: 20px;
+  font-weight: 200;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 1px;
+}
+#login .social-container,
+#signup .social-container {
+  display: flex;
+  margin: 0.5em 0;
+}
+#login .social-container a,
+#signup .social-container a {
+  border: 1px solid #dddddd;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+  height: 40px;
+  width: 40px;
+  color: #ff6584;
+}
+
+/* create company profile */
+#profile-form form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5em;
+  max-width: 70%;
+  margin: 0 auto;
+}
+#profile-form input,
+textarea {
+  background: rgba(51, 51, 51, 0.2);
+  color: rgba(51, 51, 51, 0.5);
+  border: none;
+  padding: 1em;
+  border-radius: 5px;
+  font-weight: 300;
+  font-family: "Montserrat", sans-serif;
+}

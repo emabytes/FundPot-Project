@@ -1,32 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FundPot</title>
     <link rel="stylesheet" href="/style.css">
+    <script src="https://kit.fontawesome.com/3b1c75d67e.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                 <a href="/">LOGO</a>
-                <li> <a href="/">Home</a></li>
-                <li><a href="/companyProfileList">List</a></li>
-                
-                <li><a href="/createCompanyProfile">Create</a></li>
-            </ul>
-            <ul>
-                <li><a href="/signup"></a>Sign Up</li>
-                <li><a href="/login"></a>Log In</li>
-            </ul>
-              <form action="/search" method="POST">
-                <input class="search" type="text" placeholder="Search" name="search">
-                <button type="submit"><i class="fas fa-search"></i>Search</button>
-            </form>
-        </nav>
-    </header>
 
-    <h1>HOME</h1>
+<body>
+
+    <%-include('./partials/nav')%>
+
+    <section id="hero">
+        <article id="heroA">
+            <img id="heroI" src="./assets/Bilder/hero-img 1.png" alt="">
+            <article id="heroB">
+                <h1 id="heroH">Hilf dem lokalen Handel mit deiner Spende!</h1>
+                <p id="heroP">Einleitungstext über die Webseite.
+                    Lorem ipsum dolor sit amet, con sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore.
+                </p>
+                <div class="text-box">
+                    <a href="#" class="btn btn-white btn-animate">Los gehts</a>
+                </div>
+            </article>
+        </article>
+    </section>
+    <section id="release">
+        <p id="releaseP">Are you ready to <span></span> rumble?</p>
+        <div class="text-box marg">
+            <a href="#" class="btn btn-white btn-animate">Profil erstellen</a>
+        </div>
+    </section>
 </body>
+
 </html>
