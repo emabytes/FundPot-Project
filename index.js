@@ -3,6 +3,7 @@ const express = require('express');
 const app = express()
 const mongoose = require('mongoose');
 const companyProfile = require('./models/companyProfile');
+const contactData = require('./models/contactData');
 
 const PORT = process.env.PORT || 3003;
 
@@ -25,6 +26,15 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
 // app.get("/", (req, res) => {
 //     res.render("index")
 // })
+
+app.get("/", (req, res) => {
+    companyProfile.aggregate([{ $sample: { size: 6 } }])
+    .then(result => {
+        // console.log(result)
+        res.status(200).render("index", { profile: result })
+    })
+    .catch(err => console.log(err))
+})
 
 app.get("/createCompanyProfile", (req, res) => {
     res.render('createCompanyProfile')
@@ -70,14 +80,7 @@ app.get("/signup", (req, res) => {
 })
 
 //Isabelle
-app.get("/", (req, res) => {
-    companyProfile.aggregate([{ $sample: { size: 6 } }])
-    .then(result => {
-        // console.log(result)
-        res.status(200).render("index", { profile: result })
-    })
-    .catch(err => console.log(err))
-})
+
 
 app.post('/search', (req, res) => {
     // console.log(`search query ` + req.body.search)
@@ -112,6 +115,6 @@ app.post('/contact', (req, res) => {
 
 
 
-app.use("/pageNotFound", (req, res) => {
-    res.render("404")
-})
+// app.use("/pageNotFound", (req, res) => {
+//     res.render("404")
+// })
