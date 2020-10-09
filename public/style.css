@@ -255,7 +255,7 @@ nav input {
   /* padding-left: 10%; */
   padding-top: 4%;
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   flex-direction: column;
 }
 #about .wrap p {
@@ -387,8 +387,6 @@ nav input {
   font-size: 2em;
   margin-bottom: 1em;
 }
-#random h1 {
-}
 
 /* call to action section */
 #release {
@@ -413,7 +411,7 @@ nav input {
 
 /* profile list */
 #profile-list {
-  padding: 0 3%;
+  padding: 0 3% 4em 3%;
 }
 #profile-list h1 {
   padding: 3em 0;
@@ -454,6 +452,7 @@ nav input {
   font-family: "Lobster", cursive;
   color: #333333;
   font-size: 2em;
+  padding: 0.2em 0;
 }
 #profile-list-wrap p {
   height: 3em;
@@ -669,6 +668,16 @@ footer input[type="text"] {
   box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.25);
   border-radius: 50px;
   margin-top: 0.5em;
+  outline: none;
+  border: none;
+  background: none;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+}
+footer ::placeholder {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  color:  white;
 }
 footer textarea {
   padding-left: 2%;
@@ -680,18 +689,36 @@ footer textarea {
   box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.25);
   border-radius: 17px;
   margin-bottom: 1em;
-  background: white;
+  background: none;
+  color: white;
+  outline: none;
 }
 footer button {
-  background: #ff6584;
-  height: 40px;
   color: white;
-  margin-top: 3%;
-  border-radius: 15px;
-  font-size: 1.3rem;
+  background: #ff6584;
+  border-radius: 27px;
+  font-family: "Lobster", cursive;
+  font-size: 1.4rem;
+  padding: 5px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+  border: none;
+  outline: none;
+}
+footer button:hover {
+  color: white;
+  transform: scale(0.9);
 }
 #social {
   margin-bottom: 1em;
+}
+#social img{
+  transition: all 0.5s;
+}
+#social img:hover {
+transform: scale(0.90);
 }
 .folgen li {
   list-style-type: none;
@@ -702,7 +729,12 @@ footer button {
   color: white;
   text-decoration: none;
 }
+.text-box2{
+  margin:0 13% 15vh 0;
+}
 
+
+/* media queries work in progress :) */
 @media only screen and (max-width: 768px) and (min-width: 320px) {
   #highlights_loop {
     grid-template-columns: repeat(2, 1fr);

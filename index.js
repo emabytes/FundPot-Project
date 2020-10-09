@@ -29,11 +29,11 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
 
 app.get("/", (req, res) => {
     companyProfile.aggregate([{ $sample: { size: 6 } }])
-    .then(result => {
-        // console.log(result)
-        res.status(200).render("index", { profile: result })
-    })
-    .catch(err => console.log(err))
+        .then(result => {
+            // console.log(result)
+            res.status(200).render("index", { profile: result })
+        })
+        .catch(err => console.log(err))
 })
 
 app.get("/createCompanyProfile", (req, res) => {
@@ -86,6 +86,18 @@ app.post('/search', (req, res) => {
     res.status(200).redirect(`/search/${req.body.search}`)
 })
 
+// app.get('/search/:id', (req, res) => {
+//     console.log(`search query ` + req.params.id)
+//     companyProfile.createIndex({ company_name: "text", company_headline: "text" })
+//     companyProfile.find({ $text: { $search: req.params.id } })
+//         .then(result => {
+//             console.log(req.params.id)
+//             console.log(result)
+//             res.status(200).redirect(`/companyProfilePage/${result[0]._id}`)
+//         })
+//         .catch(err => console.log(err))
+// })
+
 app.get('/search/:id', (req, res) => {
     console.log(`search query ` + req.params.id)
     companyProfile.find({ company_name: req.params.id })
@@ -105,15 +117,13 @@ app.post('/contact', (req, res) => {
         body: req.body.body,
     })
     newContactData.save()
-    .then(result => {
-        console.log("new contact request saved to db!")
-        res.status(200).redirect("/")
-    })
-    .catch(err => console.log(err))
+        .then(result => {
+            console.log("new contact request saved to db!")
+            res.status(200).redirect("/")
+        })
+        .catch(err => console.log(err))
 })
 
-
-
-// app.use("/pageNotFound", (req, res) => {
-//     res.render("404")
-// })
+app.use((req, res) => {
+    res.render("404")
+})

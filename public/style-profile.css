@@ -1,0 +1,446 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@200;400;600&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+a {
+  text-decoration: none;
+}
+nav {
+  color: #333;
+  display: flex;
+  height: 10vh;
+  align-items: center;
+  justify-content: space-around;
+}
+nav h5 {
+  font-family: "Lobster", cursive;
+  font-size: 2.2em;
+  color: #333;
+}
+.logo-wrap {
+  display: flex;
+  align-items: center;
+}
+.logo-wrap h5 {
+  margin-left: 2em;
+}
+.logo {
+  position: fixed;
+}
+nav ul {
+  color: #333;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+nav ul li a {
+  color: #333;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+nav ul li a:hover {
+  color: #6c63ff;
+}
+nav .btn {
+  font-family: "Lobster", cursive;
+  font-size: 1em;
+  margin: 0 auto;
+  background: #ff6584;
+  color: white;
+}
+nav ul li {
+  color: #333;
+  display: inline-block;
+  font-family: "Montserrat", sans-serif;
+}
+nav .btn-profil {
+  color: white;
+  background: #ff6584;
+  border-radius: 27px;
+  font-family: "Lobster", cursive;
+  font-size: 1.4rem;
+  padding: 5px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+}
+nav .btn-profil:hover {
+  /* background: #6c63ff;*/
+  color: white;
+  transform: scale(0.9);
+}
+nav button i {
+  font-size: 1.8em;
+  color: #333;
+  padding: 5px;
+}
+nav button {
+  background: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+nav form {
+  display: flex;
+  align-items: center;
+}
+nav form ul li a {
+  color: #333;
+  font-size: 1.3em;
+}
+nav input {
+  background: rgba(51, 51, 51, 0.2);
+  color: #333;
+  width: 20em;
+  height: 2.5em;
+  border-radius: 50px;
+  font-family: "Montserrat", sans-serif;
+  padding: 0.8em;
+  outline: none;
+  border: none;
+}
+
+#company-page-header {
+  /* position: relative; */
+}
+#img {
+  /* position: absolute; */
+  width: 100%;
+  height: 50vh;
+  object-fit: cover;
+  z-index: -1;
+}
+#headerI {
+  /* 
+    margin-top: 30vh;
+    width: 20%; */
+  margin-left: 42%;
+  border-radius: 50%;
+  height: 15em;
+  width: 15em;
+  object-fit: cover;
+  margin-top: -8em;
+}
+#headerH {
+  margin: 3vh 0;
+  font-family: Lobster;
+  font-style: normal;
+  font-weight: normal;
+  text-align: center;
+  font-size: 60px;
+  line-height: 75px;
+  color: #6c63ff;
+}
+#headerP {
+  color: #ff6584;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 200;
+}
+#hero {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 80%;
+  margin: 15vh auto;
+}
+#heroD {
+  width: 50%;
+  font-family: "Lobster Two", cursive;
+  color: #6c63ff;
+}
+#heroP {
+  width: 80%;
+  font-family: Montserrat;
+  color: black;
+  margin-top: 5vh;
+  line-height: 150%;
+}
+#heroD1 {
+  width: 50%;
+  font-family: "Lobster Two", cursive;
+  color: #6c63ff;
+  margin: 15vh 0 0 10%;
+}
+#heroI {
+  margin-top: 15vh;
+}
+#heroP1 {
+  width: 80%;
+  font-family: Montserrat;
+  color: black;
+  padding-left: 10%;
+  margin-top: 5vh;
+  line-height: 150%;
+}
+#heroH2 {
+  padding-left: 10%;
+  font-size: 2em;
+}
+#geschäft {
+  font-size: 2em;
+}
+#release {
+  height: 75vh;
+  background: linear-gradient(
+      250.87deg,
+      #ff6584 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    #6c63ff;
+}
+#relH1 {
+  text-align: center;
+  padding: 10vh 0;
+  font-family: "Lobster Two", cursive;
+  color: white;
+  font-size: 3em;
+}
+.rel {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.spend {
+  background: #ffffff;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+  width: 472px;
+  height: 258px;
+}
+.relH2 {
+  text-align: center;
+  margin-top: 4vh;
+  font-family: "Lobster Two", cursive;
+}
+.relUl {
+  padding: 5vh 0 0 25%;
+  font-family: Montserrat;
+  font-weight: 200;
+}
+.wid {
+  width: 90%;
+}
+#lastH {
+  text-align: center;
+  font-family: "Lobster Two", cursive;
+  color: #6c63ff;
+  font-size: 3em;
+  padding: 15vh 0 10vh 0;
+}
+#pay {
+  width: 472px;
+  height: 785px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+}
+.payP {
+  padding: 9vh 7%;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1em;
+  line-height: 129.9%;
+  letter-spacing: 0.05em;
+}
+.payPp {
+  padding: 6vh 7%;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1em;
+  line-height: 129.9%;
+  letter-spacing: 0.05em;
+}
+#image {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 70%;
+  margin: 0 auto;
+}
+#stand {
+  height: 345px;
+}
+#pay2 {
+  width: 472px;
+  height: 350px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+  margin-top: 10vh;
+}
+.btn:link,
+.btn:visited {
+  text-decoration: none;
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 100px;
+  transition: all 0.2s;
+  position: absolute;
+}
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.btn-white {
+  background-color: #ff6584;
+  color: white;
+  font-family: "Lobster Two", cursive;
+  text-align: center;
+  font-size: 1.3em;
+  margin-left: 10%;
+}
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+/* .btn-white::after {
+  background-color: #6c63ff;
+} */
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+.btn-animated {
+  animation: moveInBottom 5s ease-out;
+  animation-fill-mode: backwards;
+}
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+.lastH2 {
+  text-align: center;
+  padding-top: 5vh;
+  font-family: "Lobster Two", cursive;
+}
+#fertig {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom: 15vh;
+}
+
+footer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12em;
+  background: #6c63ff;
+  align-items: baseline;
+  padding-bottom: 10%;
+  padding-top: 5%;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+}
+footer h1 {
+  margin-bottom: 1em;
+}
+footer form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5em;
+  max-width: 60%;
+  margin: 0 auto;
+}
+footer input[type="email"],
+footer input[type="text"] {
+  height: 4vh;
+  padding-left: 2%;
+  margin-top: 2%;
+  box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
+  margin-top: 0.5em;
+  outline: none;
+  border: none;
+  background: none;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+}
+footer ::placeholder {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  color:  white;
+}
+footer textarea {
+  padding-left: 2%;
+  margin-top: 0.5em;
+  border: none;
+  border-radius: 15px;
+  box-shadow: black 5%;
+  font-family: "Montserrat", sans-serif;
+  box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.25);
+  border-radius: 17px;
+  margin-bottom: 1em;
+  background: none;
+  color: white;
+  outline: none;
+}
+footer button {
+  color: white;
+  background: #ff6584;
+  border-radius: 27px;
+  font-family: "Lobster", cursive;
+  font-size: 1.4rem;
+  padding: 5px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+  border: none;
+  outline: none;
+}
+footer button:hover {
+  color: white;
+  transform: scale(0.9);
+}
+#social {
+  margin-bottom: 1em;
+}
+#social img{
+  transition: all 0.5s;
+}
+#social img:hover {
+transform: scale(0.90);
+}
+.folgen li {
+  list-style-type: none;
+  padding-top: 1em;
+}
+.folgen a {
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+}
+.text-box2{
+  margin:0 13% 15vh 0;
+}

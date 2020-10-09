@@ -5,23 +5,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/style.css">
+    <!-- <link rel="stylesheet" href="/style.css"> -->
+    <link rel="stylesheet" href="/style-profile.css">
     <script src="https://kit.fontawesome.com/3b1c75d67e.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Lobster+Two:ital@1&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <%-include('./partials/nav')%>
-    
-    <h1>Company profile page</h1>
-    <article>
-        <div class="info-wrap">
-                <h2><%= profile.company_name %></h2>
-                <h4><%= profile.company_headline %></h4>
-            <h5><%= profile.company_story %></h5>
-            <img src="<%=profile.cover_photo_url %>" alt="">
-            <img src="<%=profile.profile_photo_url %>" alt="">
+
+    <header id="company-page-header">
+        <img id="img" src="<%=profile.cover_photo_url %>" alt="">
+        <img id="headerI" src="<%=profile.profile_photo_url %>" alt="">
+        <h1 id="headerH"><%= profile.company_name %></h1>
+        <p id="headerP"><%= profile.company_headline %></p>
+    </header>
+    <section id="hero">
+        <div id="heroD">
+            <h2 id="geschäft">Das Geschäft</h2>
+            <p id="heroP"><%= profile.company_story %></p>
         </div>
+        <img src="/1.png" alt="">
+        <img id="heroI" src="/undraw_team_spirit_hrr4 1.png" alt="">
+        <div id="heroD1">
+            <h2 id="heroH2">Das Team</h2>
+            <p id="heroP1"><%= profile.company_story %></p>
+        </div>
+    </section>
+    <section id="release">
+        <h1 id="relH1">Was braucht Boutique Boui-Boui?</h1>
+        <div class="rel">
+            <div class="spend">
+                <h2 class="relH2">Spende</h2>
+                <ul class="relUl">
+                    <li>Mitarbeiter müssen bezahlt werden</li>
+                    <li>Miete muss bezahlt werden</li>
+                    <li>Laufende Rechnungen sind offen</li>
+                </ul>
+            </div>
+            <div class="spend">
+                <h2 class="relH2">Dienstleistung</h2>
+                <ul class="relUl wid">
+                    <li>Shop braucht einen Online-Shop</li>
+                    <li>Renovierungsarbeiten sind notwendig und bei Schließung ist Zeit dafür, es  werden Helfer benötigt</li>
+                    <li>Kaufmännische Beratung</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <article>
+        <h1 id="lastH">Unterstütze auf deine Art</h1>
+        <div id="fertig">
+            <div id="pay">
+                <h2 class="lastH2">Spende</h2>
+                <p class="payP">Hier kannst du über verschiedene Wege an das Geschäft spenden:</p>
+                <div id="image">
+                    <img src="/cc-paypal-brands 1.png" alt="">
+                    <img src="/google-pay-brands 1.png" alt="">
+                    <img src="/cc-amex-brands 1.png" alt="">
+                    <img src="/cc-apple-pay-brands 1.png" alt="">
+                </div>
+                <p class="payP">Oder du vereinbarst einen Termin und bringst die Spende persönlich vorbei. :) </p>
+                <div class="text-box">
+                    <a href="#" class="btn btn-white btn-animate">Geschäft<br>kontaktieren</a>
+                </div>
+            </div>
+            <div id="pay1">
+                <img id="stand" src="/undraw_Connecting_Teams_8ntu 1.png" alt="">
+                <div id="pay2">
+                    <h2 class="lastH2">Dienstleistung</h2>
+                    <p class="payPp">Du möchtest lieber aktiv helfen? Melde dich hier bei dem Geschäft für weitere Informationen:</p>
+                    <div class="text-box">
+                        <a href="#" class="btn btn-white btn-animate">Geschäft<br>kontaktieren</a>
+                    </div>
+                </div>
+            </div>
+    </div>
     </article>
 
     <%-include('./partials/footer')%>
