@@ -81,14 +81,13 @@ app.get("/signup", (req, res) => {
 
 //Isabelle
 
-
 app.post('/search', (req, res) => {
     // console.log(`search query ` + req.body.search)
     res.status(200).redirect(`/search/${req.body.search}`)
 })
 
 app.get('/search/:id', (req, res) => {
-    // console.log(`search query ` + req.params.id)
+    console.log(`search query ` + req.params.id)
     companyProfile.find({ company_name: req.params.id })
         .then(result => {
             console.log(req.params.id)
