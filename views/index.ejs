@@ -25,7 +25,7 @@
                     quisquam.
                 </p>
                 <div class="text-box">
-                    <a href="#" class="btn btn-white btn-animate">Los gehts</a>
+                    <a href="/#about" class="btn btn-white btn-animate">Los gehts</a>
                 </div>
             </article>
         </article>
@@ -59,7 +59,6 @@
         <article id="search">
             <form action="/search" method="POST">
                 <div>
-                    <!-- <img id="search_icon" src="/search.png" alt=""> -->
                     <input placeholder="Ein Geschäft suchen" type="search" name="search" id="">
                 </div>
                 <button class="btn btn-white btn-animate" type="submit">Suchen</button>
@@ -70,14 +69,15 @@
                 mit deiner <br> Spende oder Arbeitskraft!</h1>
             <div id="highlights_loop">
                 <% profile.forEach(element => { %>
-                <div class="highlights_card">
-                    <img src="<%= element.cover_photo_url %>" alt="">
-                    <div class="highlights_container">
-                        <h1><%= element.company_name %> </h1>
-                        <p><%= element.company_headline %> </p>
-                        <a class="support-btn" href="/companyProfilePage/<%= element._id %> ">Support</a>
-                    </div>
-                </div>
+                    <article class="random-card">
+                        <img src="<%= element.cover_photo_url %>" alt=""></img>
+                        <img src="<%= element.profile_photo_url %>" alt=""></img>
+                        <div class="text-wrap">
+                            <h2> <%= element.company_name %> </h2>
+                            <p> <%= element.company_headline %> </p>
+                            <a class="support-btn" href="/companyProfilePage/<%= element._id %>">Support</a>
+                        </div>
+                    </article>
                 <% }) %>
             </div>
             <a class="support-btn all" id="all_btn" href="/companyProfileList">Alle Geschäfte</a>
@@ -87,7 +87,7 @@
     <section id="release">
         <p id="releaseP">Are you ready to <span></span> rumble?</p>
         <div class="text-box marg">
-            <a href="#" class="btn btn-white btn-animate">Profil erstellen</a>
+            <a href="/createCompanyProfile" class="btn btn-white btn-animate">Profil erstellen</a>
         </div>
     </section>
 

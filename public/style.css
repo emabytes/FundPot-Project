@@ -231,10 +231,10 @@ nav input {
   display: grid;
   /* width: 80%; */
   /* height: 500px; */
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 1fr 1fr;
   /* grid-template-rows:  100% 100% 100%; */
   gap: 5em;
-  padding: 10%;
+  padding: 7em 10em;
 }
 #about .wrap h1 {
   color: #6c63ff;
@@ -251,16 +251,17 @@ nav input {
 #about div:nth-of-type(4) {
   font-family: "Montserrat", sans-serif;
   font-size: 1.5em;
-  line-height: 31, 98px;
-  /* padding-left: 10%; */
-  padding-top: 4%;
   display: flex;
-  /* align-items: center; */
   flex-direction: column;
+}
+#about div:nth-of-type(3){
+  padding-top: 3em;
 }
 #about .wrap p {
   padding: 2em 0;
   font-size: 0.8em;
+  line-height: 2;
+  font-weight: 300;
 }
 
 /* search + random highlights */
@@ -322,10 +323,8 @@ nav input {
   color: white;
   font-family: "Lobster", cursive;
   font-size: 2.2em;
-  width: 50%;
-  margin: 2em auto;
+  padding-bottom: 2em;
   text-align: center;
-  line-height: 1.5;
 }
 #random {
   background: linear-gradient(
@@ -334,14 +333,8 @@ nav input {
       rgba(255, 255, 255, 0) 100%
     ),
     #6c63ff;
-  padding: 2em 5em;
+  padding: 4em;
   text-align: center;
-}
-/* #highlights_loop > div:nth-child(2n) {
-  transform: translateY(-20%);
-} */
-.highlights_card div {
-  padding-bottom: 5em;
 }
 .highlights_card img {
   border-radius: 50px 50px 0 0;
@@ -349,27 +342,25 @@ nav input {
   height: 30vh;
   object-fit: cover;
 }
-.highlights_container {
-  padding: 2em 4em;
-  background: white;
-  border-radius: 0 0 50px 50px;
-  /* height: 70vh; */
-  box-shadow: 0 10px 40px -14px rgba(0, 0, 0, 0.55);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.highlights_container p {
-  font-family: "Montserrat", sans-serif;
-  height: 10vh;
+.highlights_card img:nth-of-type(2) {
+  border-radius: 50%;
+  height: 10em;
+  width: 10em;
+  margin-top: -5em;
 }
 #highlights_loop {
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2em;
-  padding-bottom: 3em;
-  /* height: 250vh; */
+  gap: 3.5em;
+  text-align: center;
+  padding: 0 2em 2em 2em;
+}
+.random-card {
+  box-shadow: 0 10px 40px -14px rgba(0, 0, 0, 0.55);
+  border-radius: 30px;
+  padding-bottom: 2em;
+  background: white;
 }
 #random a {
   text-decoration: none;
@@ -381,11 +372,6 @@ nav input {
   border: none;
   color: white;
   margin-top: 2em;
-}
-.highlights_container h1 {
-  font-family: "Lobster", cursive;
-  font-size: 2em;
-  margin-bottom: 1em;
 }
 
 /* call to action section */
@@ -435,26 +421,30 @@ nav input {
   border-radius: 30px;
   padding-bottom: 2em;
 }
-#profile-list-wrap img {
+#profile-list-wrap img,
+#random img {
   width: 100%;
   height: 15em;
   object-fit: cover;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
 }
-#profile-list-wrap img:nth-of-type(2) {
+#profile-list-wrap img:nth-of-type(2),
+#random img:nth-of-type(2) {
   border-radius: 50%;
   height: 10em;
   width: 10em;
   margin-top: -5em;
 }
-#profile-list-wrap h2 {
+#profile-list-wrap h2,
+#random h2 {
   font-family: "Lobster", cursive;
   color: #333333;
   font-size: 2em;
   padding: 0.2em 0;
 }
-#profile-list-wrap p {
+#profile-list-wrap p,
+#random p {
   height: 3em;
   color: #333333;
   font-size: 1em;
@@ -559,6 +549,9 @@ nav input {
 }
 
 /* create company profile */
+#profile-form {
+  padding-bottom: 8vh;
+}
 #profile-form .container {
   text-align: center;
 }
@@ -640,59 +633,49 @@ textarea {
 }
 
 footer {
+  padding: 6vh 10%;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12em;
+  grid-template-columns: 1fr 1fr;
   background: #6c63ff;
-  align-items: baseline;
-  padding-bottom: 10%;
-  padding-top: 5%;
+  gap: 5em;
   color: white;
   font-family: "Montserrat", sans-serif;
 }
+footer ul {
+  list-style: none;
+}
 footer h1 {
-  margin-bottom: 1em;
+  padding-bottom: 1em;
 }
-footer form {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.5em;
-  max-width: 60%;
-  margin: 0 auto;
+footer input {
+  height: 6vh;
 }
-footer input[type="email"],
-footer input[type="text"] {
-  height: 4vh;
-  padding-left: 2%;
-  margin-top: 2%;
+footer input,
+footer textarea {
+  width: 95%;
   box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.25);
-  border-radius: 50px;
+  margin: 0.5em 0;
+  border-radius: 30px;
   margin-top: 0.5em;
   outline: none;
   border: none;
   background: none;
   font-family: "Montserrat", sans-serif;
   color: white;
+  padding: 20px;
+  font-weight: 300;
 }
 footer ::placeholder {
   font-family: "Montserrat", sans-serif;
   font-weight: 300;
-  color:  white;
-}
-footer textarea {
-  padding-left: 2%;
-  margin-top: 0.5em;
-  border: none;
-  border-radius: 15px;
-  box-shadow: black 5%;
-  font-family: "Montserrat", sans-serif;
-  box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.25);
-  border-radius: 17px;
-  margin-bottom: 1em;
-  background: none;
   color: white;
-  outline: none;
+  font-size: 1.1em;
 }
+
+footer textarea {
+  margin-bottom: 2em;
+}
+
 footer button {
   color: white;
   background: #ff6584;
@@ -714,25 +697,32 @@ footer button:hover {
 #social {
   margin-bottom: 1em;
 }
-#social img{
+#social img {
+  height: 2.8em;
   transition: all 0.5s;
 }
 #social img:hover {
-transform: scale(0.90);
+  transform: scale(0.9);
 }
-.folgen li {
-  list-style-type: none;
-  padding-top: 1em;
-}
-.folgen a {
-  font-size: 1.5rem;
+footer ul li a {
+  font-size: 1em;
   color: white;
   text-decoration: none;
+  transition: all 0.5s;
 }
-.text-box2{
-  margin:0 13% 15vh 0;
+footer ul li a:hover {
+  color: #ff6584;
 }
-
+footer ul li {
+  padding: 1em 0;
+  letter-spacing: 3px;
+}
+footer .folgen {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
 
 /* media queries work in progress :) */
 @media only screen and (max-width: 768px) and (min-width: 320px) {

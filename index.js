@@ -23,14 +23,9 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
             .catch(err => console.log(err))
     })
 
-// app.get("/", (req, res) => {
-//     res.render("index")
-// })
-
 app.get("/", (req, res) => {
     companyProfile.aggregate([{ $sample: { size: 6 } }])
         .then(result => {
-            // console.log(result)
             res.status(200).render("index", { profile: result })
         })
         .catch(err => console.log(err))
@@ -79,32 +74,19 @@ app.get("/signup", (req, res) => {
     res.render("signup")
 })
 
-//Isabelle
-
-app.post('/search', (req, res) => {
-    // console.log(`search query ` + req.body.search)
-    res.status(200).redirect(`/search/${req.body.search}`)
+app.get("/search", (req, res) => {
+    res.render('companyProfileList', { profileData: [] })
 })
 
-// app.get('/search/:id', (req, res) => {
-//     console.log(`search query ` + req.params.id)
-//     companyProfile.createIndex({ company_name: "text", company_headline: "text" })
-//     companyProfile.find({ $text: { $search: req.params.id } })
-//         .then(result => {
-//             console.log(req.params.id)
-//             console.log(result)
-//             res.status(200).redirect(`/companyProfilePage/${result[0]._id}`)
-//         })
-//         .catch(err => console.log(err))
-// })
+app.post('/search', (req, res) => {
+   res.status(200).redirect(`/search/${req.body.search}`)
+})
 
 app.get('/search/:id', (req, res) => {
     console.log(`search query ` + req.params.id)
-    companyProfile.find({ company_name: req.params.id })
+    companyProfile.find({ company_name: { $regex: new RegExp(req.params.id, 'i') } })
         .then(result => {
-            console.log(req.params.id)
-            console.log(result)
-            res.status(200).redirect(`/companyProfilePage/${result[0]._id}`)
+            res.render('companyProfileList', { profileData: result })
         })
         .catch(err => console.log(err))
 })

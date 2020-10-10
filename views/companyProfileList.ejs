@@ -12,25 +12,28 @@
 
 <body>
     <%-include('./partials/nav')%>
-
     <main id="profile-list">
-        <h1>Hier sind alle Geschäfte, <br> die
-            du unterstützen kannst</h1>
+    <% if (profileData.length === 0 ) { %>
+    <h1>Leider keine Geschäfte gefunden</h1>
+    <% } else { %>
+    <h1>Hier sind alle Geschäfte, <br> die
+        du unterstützen kannst</h1>
+    <section id="profile-list-wrap">
+        <% profileData.forEach(elem => { %>
+        <article>
+            <img src="<%= elem.cover_photo_url %>" alt=""></img>
+            <img src="<%= elem.profile_photo_url %>" alt=""></img>
+            <div class="text-wrap">
+                <h2> <%= elem.company_name %> </h2>
+                <p> <%= elem.company_headline %> </p>
+                <a class="btn" href="/companyProfilePage/<%= elem._id %>">Support</a>
+            </div>
+        </article>
+        <% }); %>
+    </section>
 
-        <section id="profile-list-wrap">
-            <% profileData.forEach(elem => { %>
-            <article>
-                <img src="<%= elem.cover_photo_url %>" alt=""></img>
-                <img src="<%= elem.profile_photo_url %>" alt=""></img>
-                <div class="text-wrap">
-                    <h2> <%= elem.company_name %> </h2>
-                    <p> <%= elem.company_headline %> </p>
-                    <a class="btn" href="/companyProfilePage/<%= elem._id %>">Support</a>
-                </div>
-            </article>
-            <% }); %>
-        </section>
-    </main>
+    <%}%>
+  </main>    
 
     <%-include('./partials/footer')%>
 
