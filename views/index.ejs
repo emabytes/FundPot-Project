@@ -69,15 +69,15 @@
                 mit deiner <br> Spende oder Arbeitskraft!</h1>
             <div id="highlights_loop">
                 <% profile.forEach(element => { %>
-                    <article class="random-card">
-                        <img src="<%= element.cover_photo_url %>" alt=""></img>
-                        <img src="<%= element.profile_photo_url %>" alt=""></img>
-                        <div class="text-wrap">
-                            <h2> <%= element.company_name %> </h2>
-                            <p> <%= element.company_headline %> </p>
-                            <a class="support-btn" href="/companyProfilePage/<%= element._id %>">Support</a>
-                        </div>
-                    </article>
+                <article class="random-card">
+                    <img src="<%= element.cover_photo_url %>" alt=""></img>
+                    <img src="<%= element.profile_photo_url %>" alt=""></img>
+                    <div class="text-wrap">
+                        <h2> <%= element.company_name %> </h2>
+                        <p> <%= element.company_headline %> </p>
+                        <a class="support-btn" href="/companyProfilePage/<%= element._id %>">Support</a>
+                    </div>
+                </article>
                 <% }) %>
             </div>
             <a class="support-btn all" id="all_btn" href="/companyProfileList">Alle Geschäfte</a>

@@ -20,7 +20,6 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
         app.listen(PORT, () => {
             console.log(`server is running on http://localhost:${PORT}`)
         })
-            .catch(err => console.log(err))
     })
 
 app.get("/", (req, res) => {
@@ -79,7 +78,7 @@ app.get("/search", (req, res) => {
 })
 
 app.post('/search', (req, res) => {
-   res.status(200).redirect(`/search/${req.body.search}`)
+    res.status(200).redirect(`/search/${req.body.search}`)
 })
 
 app.get('/search/:id', (req, res) => {
